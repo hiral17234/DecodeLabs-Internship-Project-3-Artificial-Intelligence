@@ -11,9 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StatesRouteImport } from './routes/states'
 import { Route as RecommendationRouteImport } from './routes/recommendation'
+import { Route as ProfileRouteImport } from './routes/profile'
 import { Route as ExploreRouteImport } from './routes/explore'
+import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AssistantRouteImport } from './routes/assistant'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StatesStateIdRouteImport } from './routes/states.$stateId'
 
@@ -27,9 +30,19 @@ const RecommendationRoute = RecommendationRouteImport.update({
   path: '/recommendation',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ExploreRoute = ExploreRouteImport.update({
   id: '/explore',
   path: '/explore',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -40,6 +53,11 @@ const AuthRoute = AuthRouteImport.update({
 const AssistantRoute = AssistantRouteImport.update({
   id: '/assistant',
   path: '/assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -55,18 +73,24 @@ const StatesStateIdRoute = StatesStateIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/assistant': typeof AssistantRoute
   '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
   '/explore': typeof ExploreRoute
+  '/profile': typeof ProfileRoute
   '/recommendation': typeof RecommendationRoute
   '/states': typeof StatesRouteWithChildren
   '/states/$stateId': typeof StatesStateIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/assistant': typeof AssistantRoute
   '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
   '/explore': typeof ExploreRoute
+  '/profile': typeof ProfileRoute
   '/recommendation': typeof RecommendationRoute
   '/states': typeof StatesRouteWithChildren
   '/states/$stateId': typeof StatesStateIdRoute
@@ -74,9 +98,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/assistant': typeof AssistantRoute
   '/auth': typeof AuthRoute
+  '/dashboard': typeof DashboardRoute
   '/explore': typeof ExploreRoute
+  '/profile': typeof ProfileRoute
   '/recommendation': typeof RecommendationRoute
   '/states': typeof StatesRouteWithChildren
   '/states/$stateId': typeof StatesStateIdRoute
@@ -85,27 +112,36 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/assistant'
     | '/auth'
+    | '/dashboard'
     | '/explore'
+    | '/profile'
     | '/recommendation'
     | '/states'
     | '/states/$stateId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/assistant'
     | '/auth'
+    | '/dashboard'
     | '/explore'
+    | '/profile'
     | '/recommendation'
     | '/states'
     | '/states/$stateId'
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/assistant'
     | '/auth'
+    | '/dashboard'
     | '/explore'
+    | '/profile'
     | '/recommendation'
     | '/states'
     | '/states/$stateId'
@@ -113,9 +149,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AssistantRoute: typeof AssistantRoute
   AuthRoute: typeof AuthRoute
+  DashboardRoute: typeof DashboardRoute
   ExploreRoute: typeof ExploreRoute
+  ProfileRoute: typeof ProfileRoute
   RecommendationRoute: typeof RecommendationRoute
   StatesRoute: typeof StatesRouteWithChildren
 }
@@ -136,11 +175,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RecommendationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/explore': {
       id: '/explore'
       path: '/explore'
       fullPath: '/explore'
       preLoaderRoute: typeof ExploreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/auth': {
@@ -155,6 +208,13 @@ declare module '@tanstack/react-router' {
       path: '/assistant'
       fullPath: '/assistant'
       preLoaderRoute: typeof AssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -187,9 +247,12 @@ const StatesRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AssistantRoute: AssistantRoute,
   AuthRoute: AuthRoute,
+  DashboardRoute: DashboardRoute,
   ExploreRoute: ExploreRoute,
+  ProfileRoute: ProfileRoute,
   RecommendationRoute: RecommendationRoute,
   StatesRoute: StatesRouteWithChildren,
 }
