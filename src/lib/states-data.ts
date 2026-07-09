@@ -31,6 +31,38 @@ export type State = {
 
 const img = (seed: string) => `https://picsum.photos/seed/${seed}/1200/800`;
 
+export const HEROES: Record<string,string> = {
+  "rajasthan": "https://s7ap1.scene7.com/is/image/incredibleindia/hawa-mahal-jaipur-rajasthan-city-1-hero?qlt=82&ts=1742200253577",
+  "kerala": "https://cdn.kimkim.com/files/a/images/e1a35f4ab7e5e6784135780f34bdd78938b9b4e0/original-4f787f7ae22b5331fd58eba80f67693d.jpg",
+  "goa": "https://www.travelcenter.uk/blog/wp-content/uploads/2018/02/Palolem-Beach-India.jpg",
+  "himachal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzijChpYXeejgVJwwmRa2ELYIUzafZ-cqXHLV7DKTCUktny2lpEeGPPOs&s=10",
+  "uttarakhand": "https://www.indianpanorama.in/assets/images/tourpackages/banner/highlights-of-uttarakhand.webp",
+  "tamilnadu": "https://www.indianpanorama.in/assets/images/tourpackages/banner/temples-of-tamilnadu.webp",
+  "karnataka": "https://karnatakatourism.org/ci/q_80,w_500/cms/wp-content/uploads/2025/06/world-heritage-day.jpg",
+  "maharashtra": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2JqYcbYVSd-wWFgqPkCsrSuScutOgFWo22xJuop91Tw&s=10",
+  "gujarat": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQk9Sh-FDcSKKw5Tw8EvoZyBaRmR9FTVp52gHoM46McOXjw6Di9dqoDFBA&s=10",
+  "punjab": "https://hldak.mmtcdn.com/prod-s3-hld-hpcmsadmin/holidays/images/cities/1350/m_destination_Amritsar_l_367_623.webp",
+  "uttarpradesh": "https://urbanacres.in/wp-content/uploads/2025/01/Uttar-Pradesh-Attracts-%E2%82%B91-Trillion-in-Hospitality-Investment-Boosting-Tourism.jpg",
+  "westbengal": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgEYiKK9D_MHabM8V0888zx4V7quPJTsr_HvPchpNzy5kZJl1p231JX9Ds&s=10",
+  "odisha": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqtox6w88EUJVN8h8mkLEahtpyxQCghrN5O_UZklsx7AYswo7_nFVWkZA&s=10",
+  "assam": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTj34Q0wD2qrT4TlrMTEGdQE-0fO0sYgAPdQIPD7HVw5hHtEmLKLUB-7cjX&s=10",
+  "bihar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-mXomm7tB4L0ltirF7ghGz5vPHAqmAt-NGJKQTnDtA8hKxWd3SRzVlgG-&s=10",
+  "madhyapradesh": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-mXomm7tB4L0ltirF7ghGz5vPHAqmAt-NGJKQTnDtA8hKxWd3SRzVlgG-&s=10",
+  "andhra": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-mXomm7tB4L0ltirF7ghGz5vPHAqmAt-NGJKQTnDtA8hKxWd3SRzVlgG-&s=10",
+  "telangana": "https://images.openai.com/static-rsc-4/B4kY8FxHESkkCKCYb-qmMGNSk5eASWPEoGghfo8HAPyursKnj_heWaFNugPFC-yMKHOFjMfhk04zpKRXFdKY0_Aoi4hbCYTJK7eONWOsfoE5Ib83ltheAY00jd-t3RcpjDpx-c1sK8B5tHTufrqUiU7XtqA4luJWD4LYuxtKYg_38Z-OZ5FYaT7Fmu4YByUO?purpose=fullsize",
+  "chhattisgarh": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuvzfG3WWwk_Ovh909xgxIu8ao-ZplBgi5wF9Vu7nUQWzaJKbHVg95l3xM&s=10",
+  "jharkhand": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOvu5wUh3R564x6JsiUmWRhJztZm13kedCXMYY0K4mJlxLTLyN3-9cEeo&s=10",
+  "haryana": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVlD88A9ynbuS62dPuxbC8EwTTuCy36GcPIaOjCiofpJz4dKv8tEfdQ3nB&s=10",
+  "arunachal": "https://images.openai.com/static-rsc-4/-huQ3bNMutqBY_1xa9kGrsyaTn_bXLXrZwfgMxPaWUcZGgkDyufP-zGEds8Ui_-yMGrGIY_YFVWjgJWgeEW9vhELQj9_mtkNjWjfvur-E5CZDEVXCY22OCRl9M49Ej3fAm55Eny15bmTxIqHhrMoj54kECKJlRrhSe6UL9VVroGcJ4sWeJ739LB1vRf6XXdv?purpose=inline",
+  "meghalaya": "https://images.openai.com/static-rsc-4/9M_EUWarei0aYR4KAA4wIisLtJ7Ih6dD98FdBqZby00B7pLi-ahVsDvJ-wxdz6rdPmRXPXyeXpXSRZi5zetONmUlr0LH1kiXM12Efw-sobbS68Difp5ihJqMgACwuxgGLqgraYk3pdYPtaefWSvpxa_Ezr4ThIZq6L1sFRHeqRM?purpose=inline",
+  "manipur": "https://images.openai.com/static-rsc-4/pdurQbV4l8D2T3AXW4w8cc-Xqdud8oba9aB-46_OMQXVcZJMXHVLYgvVUirrkotvnSJidjamTqe06SLFwPsTzv-etgMQK_a--RAIm6FXBs3zUHfRpnkmYgHs8ny4csK3Z4XQbdaahX4lEIIqyEQ5Qu0Dx8l0cQrPRb2_m60p2-c?purpose=inline",
+  "mizoram": "https://images.openai.com/static-rsc-4/gYWt6ZJkK0C7MYltUBG6UqgFVh0Y6SNZIjgcty6pL5ErgCfAphx7XBevVQmMEXusPMkxavokwQVouwdkm28waU86r8_FrHKa7pruFvvThQUJ31j4W-20656XZRGILoO-bq6kWQtO201YU8JUPQx3i5n_fTaSixVsCfAgGQoaGYc9HSEqLymvOS3CRpPjihwY?purpose=fullsize",
+  "nagaland": "https://images.openai.com/static-rsc-4/iy06ZRTRu7J_Lx4S5xUf7icrfpHlq-4XJiuowUgiDtg9oUlYxUDWzVic1SDv5-_7QRBngRTlYjxLrGwtM0HgEr7ujWRfccbfNEqM-11Y8cUahZ4hm1KfXL9r0EVP8rpCf1TRdws8Yag2JPp3AwgegOzXj6M0UIxUlO4djML2wvc?purpose=inline",
+  "tripura": "https://images.openai.com/static-rsc-4/HpTNRFIe3AcXEyxSBWOgdk0hJYKbiOL79fhpL9Oc3Yrinp9OQVTkARrKp-l7STl1LjXupYqFYKo64zgHH1_3SZ_0IRZNN5Q5bj0qd7VG-5BdxLKA1WWHO7bRidirM207opboIXgck_pqoblazZFOlRRvrB_pn0g0pYF6-yVdFN8?purpose=inline",
+  "sikkim": "https://images.openai.com/static-rsc-4/Byi6-MBKwDkXWpakAE88ABFsuaLauuY5y2l_wDrfKMX52swwlxfUMmEqPzHRPjpi0eup_3zRBQLtYSzwlV7G4yHefvnDaXSpnDgTVmDOpgOzGtoEHR3t6PUnYy-miXbM_Ih-6nlNd2JZKUFTQ38ZFG5lEJi3uVoGo1uhJ5VnPRQ?purpose=inline"
+};
+
+
 export const STATES: State[] = [
   {
     id: "rajasthan", name: "Rajasthan", capital: "Jaipur", region: "North",
@@ -50,7 +82,7 @@ export const STATES: State[] = [
     cities: ["Jaipur", "Udaipur", "Jodhpur", "Jaisalmer", "Pushkar"],
     tags: ["desert", "culture", "history", "luxury", "honeymoon", "photography", "family"],
     seasons: ["winter"], budgetTier: 3,
-    hero: img("rajasthan-fort"), gallery: [img("rajasthan-1"), img("rajasthan-2"), img("rajasthan-3"), img("rajasthan-4")],
+    hero: HEROES["rajasthan"], gallery: [img("rajasthan-1"), img("rajasthan-2"), img("rajasthan-3"), img("rajasthan-4")],
     emoji: "🏜️", tagline: "The Royal Desert Kingdom",
   },
   {
@@ -69,7 +101,7 @@ export const STATES: State[] = [
     cities: ["Kochi", "Alleppey", "Munnar", "Trivandrum", "Wayanad"],
     tags: ["beach", "mountain", "forest", "honeymoon", "family", "food", "photography", "wildlife"],
     seasons: ["winter", "monsoon"], budgetTier: 3,
-    hero: img("kerala-backwater"), gallery: [img("kerala-1"), img("kerala-2"), img("kerala-3"), img("kerala-4")],
+    hero: HEROES["kerala"], gallery: [img("kerala-1"), img("kerala-2"), img("kerala-3"), img("kerala-4")],
     emoji: "🌴", tagline: "God's Own Country",
   },
   {
@@ -89,7 +121,7 @@ export const STATES: State[] = [
     cities: ["Panaji", "Margao", "Vasco", "Calangute"],
     tags: ["beach", "honeymoon", "friends", "food", "adventure", "photography"] as any,
     seasons: ["winter"], budgetTier: 3,
-    hero: img("goa-beach"), gallery: [img("goa-1"), img("goa-2"), img("goa-3"), img("goa-4")],
+    hero: HEROES["goa"], gallery: [img("goa-1"), img("goa-2"), img("goa-3"), img("goa-4")],
     emoji: "🏖️", tagline: "Sun, Sand & Susegad",
   },
   {
@@ -110,7 +142,7 @@ export const STATES: State[] = [
     cities: ["Shimla", "Manali", "Dharamshala", "Kasol", "Spiti"],
     tags: ["mountain", "snow", "adventure", "honeymoon", "solo", "photography"] as any,
     seasons: ["summer", "winter"], budgetTier: 3,
-    hero: img("himachal-mountain"), gallery: [img("himachal-1"), img("himachal-2"), img("himachal-3"), img("himachal-4")],
+    hero: HEROES["himachal"], gallery: [img("himachal-1"), img("himachal-2"), img("himachal-3"), img("himachal-4")],
     emoji: "🏔️", tagline: "Abode of Snow",
   },
   {
@@ -131,7 +163,7 @@ export const STATES: State[] = [
     cities: ["Dehradun", "Rishikesh", "Haridwar", "Nainital", "Mussoorie"],
     tags: ["mountain", "adventure", "pilgrimage", "wildlife", "snow", "solo"] as any,
     seasons: ["summer", "winter"], budgetTier: 2,
-    hero: img("uttarakhand-himalaya"), gallery: [img("uk-1"), img("uk-2"), img("uk-3"), img("uk-4")],
+    hero: HEROES["uttarakhand"], gallery: [img("uk-1"), img("uk-2"), img("uk-3"), img("uk-4")],
     emoji: "🕉️", tagline: "Land of the Gods",
   },
   {
@@ -152,7 +184,7 @@ export const STATES: State[] = [
     cities: ["Chennai", "Madurai", "Coimbatore", "Ooty", "Thanjavur"],
     tags: ["culture", "history", "beach", "mountain", "food", "pilgrimage"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("tamilnadu-temple"), gallery: [img("tn-1"), img("tn-2"), img("tn-3"), img("tn-4")],
+    hero: HEROES["tamilnadu"], gallery: [img("tn-1"), img("tn-2"), img("tn-3"), img("tn-4")],
     emoji: "🛕", tagline: "Temples & Traditions",
   },
   {
@@ -173,7 +205,7 @@ export const STATES: State[] = [
     cities: ["Bengaluru", "Mysuru", "Hampi", "Coorg", "Mangaluru"],
     tags: ["history", "beach", "mountain", "wildlife", "food", "photography"] as any,
     seasons: ["winter"], budgetTier: 3,
-    hero: img("karnataka-hampi"), gallery: [img("ka-1"), img("ka-2"), img("ka-3"), img("ka-4")],
+    hero: HEROES["karnataka"], gallery: [img("ka-1"), img("ka-2"), img("ka-3"), img("ka-4")],
     emoji: "☕", tagline: "One State, Many Worlds",
   },
   {
@@ -194,7 +226,7 @@ export const STATES: State[] = [
     cities: ["Mumbai", "Pune", "Aurangabad", "Nashik", "Lonavala"],
     tags: ["history", "beach", "food", "adventure", "photography", "family"] as any,
     seasons: ["winter", "monsoon"], budgetTier: 3,
-    hero: img("maharashtra-mumbai"), gallery: [img("mh-1"), img("mh-2"), img("mh-3"), img("mh-4")],
+    hero: HEROES["maharashtra"], gallery: [img("mh-1"), img("mh-2"), img("mh-3"), img("mh-4")],
     emoji: "🎭", tagline: "The Land of Warriors",
   },
   {
@@ -215,7 +247,7 @@ export const STATES: State[] = [
     cities: ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhuj"],
     tags: ["desert", "culture", "history", "wildlife", "family", "photography"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("gujarat-rann"), gallery: [img("gj-1"), img("gj-2"), img("gj-3"), img("gj-4")],
+    hero: HEROES["gujarat"], gallery: [img("gj-1"), img("gj-2"), img("gj-3"), img("gj-4")],
     emoji: "🦁", tagline: "The Vibrant West",
   },
   {
@@ -234,7 +266,7 @@ export const STATES: State[] = [
     cities: ["Amritsar", "Chandigarh", "Ludhiana", "Patiala"],
     tags: ["culture", "pilgrimage", "food", "history", "family"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("punjab-golden"), gallery: [img("pb-1"), img("pb-2"), img("pb-3"), img("pb-4")],
+    hero: HEROES["punjab"], gallery: [img("pb-1"), img("pb-2"), img("pb-3"), img("pb-4")],
     emoji: "☬", tagline: "Land of Five Rivers",
   },
   {
@@ -254,7 +286,7 @@ export const STATES: State[] = [
     cities: ["Agra", "Varanasi", "Lucknow", "Ayodhya", "Mathura"],
     tags: ["history", "pilgrimage", "culture", "photography", "food"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("up-taj"), gallery: [img("up-1"), img("up-2"), img("up-3"), img("up-4")],
+    hero: HEROES["uttarpradesh"], gallery: [img("up-1"), img("up-2"), img("up-3"), img("up-4")],
     emoji: "🕌", tagline: "Heartland of Heritage",
   },
   {
@@ -275,7 +307,7 @@ export const STATES: State[] = [
     cities: ["Kolkata", "Darjeeling", "Siliguri", "Sundarban"],
     tags: ["culture", "wildlife", "mountain", "food", "history", "photography"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("wb-darjeeling"), gallery: [img("wb-1"), img("wb-2"), img("wb-3"), img("wb-4")],
+    hero: HEROES["westbengal"], gallery: [img("wb-1"), img("wb-2"), img("wb-3"), img("wb-4")],
     emoji: "🐅", tagline: "The Cultural Capital",
   },
   {
@@ -294,7 +326,7 @@ export const STATES: State[] = [
     cities: ["Bhubaneswar", "Puri", "Konark", "Cuttack"],
     tags: ["beach", "pilgrimage", "history", "culture", "wildlife"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("odisha-konark"), gallery: [img("od-1"), img("od-2"), img("od-3"), img("od-4")],
+    hero: HEROES["odisha"], gallery: [img("od-1"), img("od-2"), img("od-3"), img("od-4")],
     emoji: "🌅", tagline: "Soul of India",
   },
   {
@@ -314,7 +346,7 @@ export const STATES: State[] = [
     cities: ["Guwahati", "Jorhat", "Dibrugarh", "Tezpur"],
     tags: ["wildlife", "culture", "forest", "photography"] as any,
     seasons: ["winter"], budgetTier: 3,
-    hero: img("assam-kaziranga"), gallery: [img("as-1"), img("as-2"), img("as-3"), img("as-4")],
+    hero: HEROES["assam"], gallery: [img("as-1"), img("as-2"), img("as-3"), img("as-4")],
     emoji: "🦏", tagline: "Land of Red River",
   },
   {
@@ -333,7 +365,7 @@ export const STATES: State[] = [
     cities: ["Patna", "Gaya", "Nalanda", "Rajgir"],
     tags: ["pilgrimage", "history", "culture"] as any,
     seasons: ["winter"], budgetTier: 1,
-    hero: img("bihar-bodhgaya"), gallery: [img("br-1"), img("br-2"), img("br-3"), img("br-4")],
+    hero: HEROES["bihar"], gallery: [img("br-1"), img("br-2"), img("br-3"), img("br-4")],
     emoji: "☸️", tagline: "Where Buddha Awakened",
   },
   {
@@ -354,7 +386,7 @@ export const STATES: State[] = [
     cities: ["Bhopal", "Indore", "Khajuraho", "Gwalior", "Ujjain"],
     tags: ["wildlife", "history", "forest", "pilgrimage", "photography"] as any,
     seasons: ["winter"], budgetTier: 3,
-    hero: img("mp-tiger"), gallery: [img("mp-1"), img("mp-2"), img("mp-3"), img("mp-4")],
+    hero: HEROES["madhyapradesh"], gallery: [img("mp-1"), img("mp-2"), img("mp-3"), img("mp-4")],
     emoji: "🐯", tagline: "The Heart of India",
   },
   {
@@ -374,7 +406,7 @@ export const STATES: State[] = [
     cities: ["Visakhapatnam", "Vijayawada", "Tirupati", "Amaravati"],
     tags: ["pilgrimage", "beach", "food", "culture", "mountain"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("ap-tirupati"), gallery: [img("ap-1"), img("ap-2"), img("ap-3"), img("ap-4")],
+    hero: HEROES["andhra"], gallery: [img("ap-1"), img("ap-2"), img("ap-3"), img("ap-4")],
     emoji: "🌊", tagline: "The Sunrise State",
   },
   {
@@ -393,7 +425,7 @@ export const STATES: State[] = [
     cities: ["Hyderabad", "Warangal", "Karimnagar"],
     tags: ["food", "history", "culture", "family"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("telangana-charminar"), gallery: [img("tg-1"), img("tg-2"), img("tg-3"), img("tg-4")],
+    hero: HEROES["telangana"], gallery: [img("tg-1"), img("tg-2"), img("tg-3"), img("tg-4")],
     emoji: "🌙", tagline: "The Pearl City",
   },
   {
@@ -412,7 +444,7 @@ export const STATES: State[] = [
     cities: ["Raipur", "Jagdalpur", "Bilaspur"],
     tags: ["forest", "adventure", "culture", "wildlife"] as any,
     seasons: ["winter", "monsoon"], budgetTier: 1,
-    hero: img("cg-chitrakote"), gallery: [img("cg-1"), img("cg-2"), img("cg-3"), img("cg-4")],
+    hero: HEROES["chhattisgarh"], gallery: [img("cg-1"), img("cg-2"), img("cg-3"), img("cg-4")],
     emoji: "🌊", tagline: "Land of Waterfalls & Tribes",
   },
   {
@@ -431,7 +463,7 @@ export const STATES: State[] = [
     cities: ["Ranchi", "Jamshedpur", "Deoghar"],
     tags: ["forest", "adventure", "pilgrimage", "wildlife"] as any,
     seasons: ["winter"], budgetTier: 1,
-    hero: img("jh-hundru"), gallery: [img("jh-1"), img("jh-2"), img("jh-3"), img("jh-4")],
+    hero: HEROES["jharkhand"], gallery: [img("jh-1"), img("jh-2"), img("jh-3"), img("jh-4")],
     emoji: "🌳", tagline: "The Land of Forests",
   },
   {
@@ -449,7 +481,7 @@ export const STATES: State[] = [
     cities: ["Chandigarh", "Gurgaon", "Kurukshetra", "Panchkula"],
     tags: ["history", "culture", "family"] as any,
     seasons: ["winter"], budgetTier: 1,
-    hero: img("hr-kurukshetra"), gallery: [img("hr-1"), img("hr-2"), img("hr-3"), img("hr-4")],
+    hero: HEROES["haryana"], gallery: [img("hr-1"), img("hr-2"), img("hr-3"), img("hr-4")],
     emoji: "🏇", tagline: "Karam Bhoomi",
   },
   {
@@ -468,7 +500,7 @@ export const STATES: State[] = [
     cities: ["Itanagar", "Tawang", "Ziro", "Bomdila"],
     tags: ["mountain", "adventure", "culture", "snow", "photography"] as any,
     seasons: ["winter"], budgetTier: 3,
-    hero: img("ar-tawang"), gallery: [img("ar-1"), img("ar-2"), img("ar-3"), img("ar-4")],
+    hero: HEROES["arunachal"], gallery: [img("ar-1"), img("ar-2"), img("ar-3"), img("ar-4")],
     emoji: "🏯", tagline: "Land of Dawn-Lit Mountains",
   },
   {
@@ -488,7 +520,7 @@ export const STATES: State[] = [
     cities: ["Shillong", "Cherrapunji", "Dawki", "Tura"],
     tags: ["mountain", "forest", "adventure", "honeymoon", "photography"] as any,
     seasons: ["winter", "monsoon"], budgetTier: 3,
-    hero: img("ml-cherrapunji"), gallery: [img("ml-1"), img("ml-2"), img("ml-3"), img("ml-4")],
+    hero: HEROES["meghalaya"], gallery: [img("ml-1"), img("ml-2"), img("ml-3"), img("ml-4")],
     emoji: "☁️", tagline: "Abode of Clouds",
   },
   {
@@ -507,7 +539,7 @@ export const STATES: State[] = [
     cities: ["Imphal", "Bishnupur", "Ukhrul"],
     tags: ["culture", "wildlife", "photography"] as any,
     seasons: ["winter"], budgetTier: 3,
-    hero: img("mn-loktak"), gallery: [img("mn-1"), img("mn-2"), img("mn-3"), img("mn-4")],
+    hero: HEROES["manipur"], gallery: [img("mn-1"), img("mn-2"), img("mn-3"), img("mn-4")],
     emoji: "💎", tagline: "Jewel of India",
   },
   {
@@ -525,7 +557,7 @@ export const STATES: State[] = [
     cities: ["Aizawl", "Lunglei", "Champhai"],
     tags: ["mountain", "culture", "adventure"] as any,
     seasons: ["winter"], budgetTier: 3,
-    hero: img("mz-aizawl"), gallery: [img("mz-1"), img("mz-2"), img("mz-3"), img("mz-4")],
+    hero: HEROES["mizoram"], gallery: [img("mz-1"), img("mz-2"), img("mz-3"), img("mz-4")],
     emoji: "⛰️", tagline: "Song of the Hills",
   },
   {
@@ -544,7 +576,7 @@ export const STATES: State[] = [
     cities: ["Kohima", "Dimapur", "Mokokchung"],
     tags: ["culture", "mountain", "adventure", "photography"] as any,
     seasons: ["winter"], budgetTier: 3,
-    hero: img("nl-hornbill"), gallery: [img("nl-1"), img("nl-2"), img("nl-3"), img("nl-4")],
+    hero: HEROES["nagaland"], gallery: [img("nl-1"), img("nl-2"), img("nl-3"), img("nl-4")],
     emoji: "🪶", tagline: "Land of Festivals",
   },
   {
@@ -563,7 +595,7 @@ export const STATES: State[] = [
     cities: ["Agartala", "Udaipur (Tripura)", "Dharmanagar"],
     tags: ["culture", "history"] as any,
     seasons: ["winter"], budgetTier: 2,
-    hero: img("tr-neermahal"), gallery: [img("tr-1"), img("tr-2"), img("tr-3"), img("tr-4")],
+    hero: HEROES["tripura"], gallery: [img("tr-1"), img("tr-2"), img("tr-3"), img("tr-4")],
     emoji: "🏰", tagline: "Land of Kings & Rivers",
   },
   {
@@ -583,7 +615,7 @@ export const STATES: State[] = [
     cities: ["Gangtok", "Pelling", "Lachung", "Namchi"],
     tags: ["mountain", "snow", "adventure", "honeymoon", "photography"] as any,
     seasons: ["winter", "summer"], budgetTier: 3,
-    hero: img("sk-kanchenjunga"), gallery: [img("sk-1"), img("sk-2"), img("sk-3"), img("sk-4")],
+    hero: HEROES["sikkim"], gallery: [img("sk-1"), img("sk-2"), img("sk-3"), img("sk-4")],
     emoji: "🏔️", tagline: "The Himalayan Jewel",
   },
 ];
