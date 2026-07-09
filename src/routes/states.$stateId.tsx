@@ -23,7 +23,8 @@ export const Route = createFileRoute("/states/$stateId")({
 });
 
 function StateDetail() {
-  const { state } = Route.useLoaderData();
+  const data = Route.useLoaderData() as { state: State };
+  const state = data.state;
   const { has, toggle } = useWishlist();
   const liked = has(state.id);
 
