@@ -95,8 +95,8 @@
   --magenta-glow: oklch(0.68 0.26 335);
 
   --gradient-hero: radial-gradient(ellipse at top, oklch(0.25 0.14 275) 0%, oklch(0.15 0.08 265) 45%, oklch(0.1 0.05 260) 100%);
-  --gradient-primary: linear-gradient(135deg, oklch(0.55 0.24 275), oklch(0.6 0.24 330), oklch(0.65 0.18 190));
-  --gradient-saffron: linear-gradient(135deg, oklch(0.72 0.2 55), oklch(0.6 0.24 20), oklch(0.55 0.26 340));
+  --gradient-primary: linear-gradient(135deg, oklch(0.78 0.2 275), oklch(0.78 0.22 330), oklch(0.82 0.18 190));
+  --gradient-saffron: linear-gradient(135deg, oklch(0.88 0.18 70), oklch(0.78 0.22 30), oklch(0.75 0.24 340));
   --shadow-glow: 0 20px 80px -10px oklch(0.6 0.28 280 / 55%);
   --shadow-glass: 0 8px 40px 0 oklch(0 0 0 / 45%);
   --glass-bg: oklch(0.2 0.06 265 / 45%);
