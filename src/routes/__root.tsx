@@ -80,7 +80,7 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="dark">
       <head><HeadContent /></head>
-      <body style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <body style={{ fontFamily: "'Inter', 'Noto Color Emoji', system-ui, sans-serif" }}>
         {children}
         <Scripts />
       </body>
