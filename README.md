@@ -1,4 +1,4 @@
-#NavYatra: Know Your India
+# NavYatra: Know Your India
 
 > **An AI-Powered Travel Recommendation System to Explore the Incredible Diversity of India**
 
