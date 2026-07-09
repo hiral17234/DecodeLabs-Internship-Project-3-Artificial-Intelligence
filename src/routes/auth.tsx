@@ -130,12 +130,21 @@ function AuthPage() {
   );
 }
 
-function Field({ icon: Icon, ...props }: any) {
+type FieldProps = {
+  icon: React.ComponentType<{ className?: string }>;
+  type?: string;
+  placeholder: string;
+  value: string;
+  required?: boolean;
+  onChange: (v: string) => void;
+};
+function Field({ icon: Icon, onChange, ...props }: FieldProps) {
   return (
     <div className="relative">
       <Icon className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
       <input
         {...props}
+        onChange={(e) => onChange(e.target.value)}
         className="w-full rounded-xl border border-border bg-white/5 py-3 pl-10 pr-3 text-sm outline-none transition focus:border-[var(--primary)] focus:bg-white/10"
       />
     </div>
