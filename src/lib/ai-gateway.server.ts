@@ -1,8 +1,3 @@
-import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
-
-// Not installed via bun — we bypass AI SDK and call the gateway directly with fetch,
-// so we don't need @ai-sdk/openai-compatible. Keeping a thin fetch helper instead.
-
 export async function callGeminiChat(opts: {
   apiKey: string;
   system: string;
@@ -26,9 +21,8 @@ export async function callGeminiChat(opts: {
     const body = await res.text();
     throw new Error(`Gateway ${res.status}: ${body}`);
   }
-  const data = (await res.json()) as any;
+  const data = (await res.json()) as {
+    choices?: { message?: { content?: string } }[];
+  };
   return data.choices?.[0]?.message?.content ?? "";
 }
-
-// unused import guard
-void createOpenAICompatible;
