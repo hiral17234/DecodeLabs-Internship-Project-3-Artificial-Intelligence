@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowLeft, MapPin, Calendar, Wallet, Clock, Utensils, PartyPopper, Landmark, TreePine, Mountain, Waves, Sparkles, Lightbulb, Heart } from "lucide-react";
-import { getState, STATES } from "@/lib/states-data";
+import { getState, STATES, type State } from "@/lib/states-data";
 import { useWishlist } from "@/lib/wishlist-context";
 
 export const Route = createFileRoute("/states/$stateId")({
